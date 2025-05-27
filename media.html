@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X3PHYR</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-image: url('./media/glitch.PNG');
+      background-repeat: repeat;
+      color: white;
+      text-shadow: 2px 2px 2px black;
+      text-align: center;
+      background-color: black;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+    }
+    img, iframe {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4">
+  <div class="bg-black bg-opacity-90 max-w-4xl w-full p-6 rounded-lg">
+    <header class="mb-4">
+      <h1 class="text-4xl text-white">X3PHYR.XYZ</h1>
+    </header>
+
+    <hr class="border-gray-600 my-4">
+
+    <nav class="mb-4 text-red-500 space-x-2 text-sm md:text-base">
+      <a href="index.html">home</a> |
+      <a href="about.html">alllll about meeeeeeee</a> |
+      <a href="media.html">media</a>
+    </nav>
+
+    <hr class="border-gray-600 my-4">
+
+    <main class="mb-6">
+      <h2 class="text-2xl mb-4">Visual + Audio Experiments</h2>
+      <div id="filters" class="mb-6 space-x-2 text-sm"></div>
+      <div id="media-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </main>
+
+    <footer class="text-xs text-gray-400">
+      <div class="overflow-hidden whitespace-nowrap my-4">
+        <div class="animate-marquee inline-block">
+          𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR
+        </div>
+      </div>
+      <hr class="border-gray-600 my-2">
+      <a href="https://www.youtube.com/@X3PHYR_XYZ" class="text-red-500">YouTube</a> |
+      <a href="https://www.instagram.com/x3phyrrrr/" class="text-red-500">Instagram</a>
+    </footer>
+  </div>
+
+  <style>
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+    }
+  </style>
+
+  <script>
+    const mediaData = [
+      {
+        "title": "BECOMING",
+        "type": "video",
+        "url": "https://youtu.be/SumEqrwiL3U",
+        "tags": []
+      }
+    ];
+
+    const mediaContainer = document.getElementById('media-container');
+    const filters = document.getElementById('filters');
+    let selectedTag = null;
+
+    const uniqueTags = [...new Set(mediaData.flatMap(m => m.tags))];
+
+    if (uniqueTags.length > 0) {
+      uniqueTags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.className = 'px-3 py-1 bg-red-700 rounded hover:bg-red-500 text-white';
+        btn.textContent = tag;
+        btn.onclick = () => {
+          selectedTag = selectedTag === tag ? null : tag;
+          renderMedia();
+        };
+        filters.appendChild(btn);
+      });
+    } else {
+      filters.style.display = 'none';
+    }
+
+    function renderMedia() {
+      mediaContainer.innerHTML = '';
+      const filtered = selectedTag ? mediaData.filter(m => m.tags.includes(selectedTag)) : mediaData;
+      filtered.forEach(item => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'bg-gray-900 p-4 rounded shadow';
+
+        const title = document.createElement('h3');
+        title.className = 'text-lg font-semibold mb-2';
+        title.textContent = item.title;
+        wrapper.appendChild(title);
+
+        if (item.type === 'video') {
+          const iframe = document.createElement('iframe');
+          iframe.src = item.url;
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allowfullscreen', '');
+          wrapper.appendChild(iframe);
+        } else if (item.type === 'image') {
+          const img = document.createElement('img');
+          img.src = item.url;
+          img.alt = item.title;
+          wrapper.appendChild(img);
+        }
+
+        const tagList = document.createElement('p');
+        tagList.className = 'text-xs text-gray-400 mt-2';
+        tagList.textContent = item.tags.map(t => `#${t}`).join(' ');
+        wrapper.appendChild(tagList);
+
+        mediaContainer.appendChild(wrapper);
+      });
+    }
+
+    renderMedia();
+  </script>
+</body>
+</html>

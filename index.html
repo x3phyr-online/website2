@@ -1,74 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X3PHYR</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-image: url('./media/glitch.PNG');
-      background-repeat: repeat;
-      color: white;
-      text-shadow: 2px 2px 2px black;
-      text-align: center;
-      background-color: black;
-    }
-    h1 {
-      font-family: 'Cinzel', serif;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | X3PHYR</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="global.css" rel="stylesheet" />
 </head>
 <body class="min-h-screen flex items-center justify-center px-4">
   <div class="bg-black bg-opacity-90 max-w-3xl w-full p-6 rounded-lg">
     <header class="mb-4">
-      <h1 class="text-4xl text-white">X3PHYR.XYZ</h1>
+      <h1 class="text-4xl text-white">Home - X3PHYR.XYZ</h1>
     </header>
 
-    <hr class="border-gray-600 my-4">
+    <hr class="border-gray-600 my-4"/>
 
     <nav class="mb-4 text-red-500 space-x-2 text-sm md:text-base">
       <a href="index.html">home</a> |
       <a href="about.html">alllll about meeeeeeee</a> |
-      <a href="media.html">media</a>
-
+      <a href="media.html">media</a> |
+      <a href="inspirations.html">inspirations</a>
     </nav>
 
-    <hr class="border-gray-600 my-4">
+    <hr class="border-gray-600 my-4"/>
 
-    <main class="mb-6">
+    <main class="mb-6 text-center">
       <p>Xephyr <i>(zeh-fur)</i>, 21, he/they</p>
       <p class="my-2">⛧ cyberalchemist technomancer furry femboy ⛧</p>
-      <img src="./media/pfp.PNG" alt="pfp" class="mt-4 rounded shadow-lg">
+      <img src="./media/pfp.PNG" alt="pfp" class="mt-4 rounded shadow-lg"/>
     </main>
 
-    <footer class="text-xs text-gray-400">
+    <footer class="text-xs text-gray-400 text-center">
       <div class="overflow-hidden whitespace-nowrap my-4">
         <div class="animate-marquee inline-block">
           𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR𓂀X3PHYR
         </div>
       </div>
-      <hr class="border-gray-600 my-2">
+      <hr class="border-gray-600 my-2" />
       <a href="https://www.youtube.com/@X3PHYR_XYZ" class="text-red-500">YouTube</a> |
       <a href="https://www.instagram.com/x3phyrrrr/" class="text-red-500">Instagram</a>
     </footer>
   </div>
-
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-marquee {
-      display: inline-block;
-      animation: marquee 10s linear infinite;
-    }
-  </style>
 </body>
 </html>

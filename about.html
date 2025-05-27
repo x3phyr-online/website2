@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X3PHYR</title>
+  <title>About | X3PHYR</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <style>
@@ -23,12 +23,20 @@
       max-width: 100%;
       height: auto;
     }
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+    }
   </style>
 </head>
 <body class="min-h-screen flex items-center justify-center px-4">
   <div class="bg-black bg-opacity-90 max-w-3xl w-full p-6 rounded-lg">
     <header class="mb-4">
-      <h1 class="text-4xl text-white">X3PHYR.XYZ</h1>
+      <h1 class="text-4xl text-white">About - X3PHYR.XYZ</h1>
     </header>
 
     <hr class="border-gray-600 my-4">
@@ -36,18 +44,20 @@
     <nav class="mb-4 text-red-500 space-x-2 text-sm md:text-base">
       <a href="index.html">home</a> |
       <a href="about.html">alllll about meeeeeeee</a> |
-      <a href="media.html">media</a>
-
+      <a href="media.html">media</a> |
+      <a href="inspirations.html">inspirations</a>
     </nav>
 
     <hr class="border-gray-600 my-4">
 
     <main class="mb-6 space-y-6">
+      <p>Xephyr <i>(zeh-fur)</i>, 21, he/they, X3</p>
+      <p class="my-2">⛧ cyberalchemist technomancer computer worshipper ⛧</p>
       <p class="text-lg">Nonbinary furry femboy -- I like individuality and technology.</p>
 
       <div>
-        <h1 class="text-2xl mb-2">The Rules</h1>
-        <p class="text-sm text-gray-300 mb-2">I don't make the rules (yes I do). Subject to change.</p>
+        <h2 class="text-2xl mb-2">The Rules</h2>
+        <p class="text-sm text-gray-300 mb-2">I don't make the rules (yes I do). Non-binding and subject to change.</p>
         <ol class="list-decimal list-inside text-left text-sm md:text-base space-y-2 max-w-xl mx-auto">
           <li>Strive for simultaneous, balanced improvement across all areas of life.</li>
           <li>Minimize dependence where reasonable (upon proprietary software, substances, and people).</li>
@@ -68,16 +78,5 @@
       <a href="https://www.instagram.com/x3phyrrrr/" class="text-red-500">Instagram</a>
     </footer>
   </div>
-
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-marquee {
-      display: inline-block;
-      animation: marquee 10s linear infinite;
-    }
-  </style>
 </body>
 </html>
